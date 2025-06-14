@@ -27,8 +27,8 @@ func Eventually(condition func() bool, waitFor time.Duration, tick time.Duration
 			if v {
 				return true
 			}
+			// 这里不能去掉(因为上面的for的tick.C是只执行一次)
 			tick = ticker.C
 		}
 	}
-
 }
