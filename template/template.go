@@ -5,6 +5,7 @@ import (
 	"text/template"
 )
 
+// SubsituteTemplate 从context传入参数来渲染模板
 func SubsituteTemplate(tmpl string, context interface{}) (string, error) {
 	t, tmplPrsErr := template.New("test").Option("missingkey=zero").Parse(tmpl)
 	if tmplPrsErr != nil {
